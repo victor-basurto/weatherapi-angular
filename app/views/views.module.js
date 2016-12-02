@@ -1,0 +1,1 @@
+angular.module( 'Weather.views', [ 'View.home' ] );

@@ -1,0 +1,15 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"undef": true,
+	"latedef": false,
+	"globals": {
+		"angular": true,
+		"browser": true,
+		"element": true,
+		"by":true,
+		"io":true,
+		"_":false,
+		"$":false
+	}
+}

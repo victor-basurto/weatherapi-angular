@@ -1,0 +1,31 @@
+{
+  "name": "weather-ng-app",
+  "version": "1.0.0",
+  "description": "Weather App",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "node api/server.js"
+  },
+  "author": "victor basurto",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "express": "~4.14.0",
+    "method-override": "~2.3.6",
+    "mongoose": "~4.6.8",
+    "morgan": "~1.7.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-autoprefixer": "~3.1.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-sass": "~2.3.2",
+    "jasmine": "^2.5.2",
+    "jshint": "^2.9.4",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "protractor": "^4.0.11"
+  }
+}

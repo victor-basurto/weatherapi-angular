@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="Weather" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="Weather" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="Weather" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="Weather" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="Weather">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no">
+
+	<title>Weather App</title>
+
+	<link rel="stylesheet" href="./assets/libs/angular-material/angular-material.css">
+	<link rel="stylesheet" href="./assets/libs/mdi/css/materialdesignicons.min.css" media="all" type="text/css"><!-- material design icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	
+	<ui-view></ui-view>
+
+
+
+	<!-- libs -->
+	<script src="./assets/libs/angular/angular.min.js"></script>
+	<script src="./assets/libs/angular-animate/angular-animate.js"></script>
+	<script src="./assets/libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="./assets/libs/angular-aria/angular-aria.js"></script>
+	<script src="./assets/libs/angular-material/angular-material.js"></script>
+	<script src="./assets/libs/lodash/dist/lodash.min.js"></script>
+	<!-- config -->
+	<script src="./config/app.modules.js"></script>
+	<script src="./config/app.config.js"></script>
+	<!-- Modules -->
+	<script src="./components/components.module.js"></script>
+	<script src="./views/views.module.js"></script>
+	<script src="./shared/shared.module.js"></script>
+	<!-- Controllers -->
+	<script src="./shared/services/default.fac.js"></script>
+	<script src="./views/home/home.ctr.js"></script>
+	<script src="./components/navigation/nav.com.js"></script>
+</body>
+</html>

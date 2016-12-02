@@ -1,0 +1,11 @@
+<!-- navigation -->
+<header>
+	<navigation 
+		left-nav="Home.openSidenav()" 
+		right-nav="Home.closeSidenav()"
+		get-weather="Home.getCityWeather()">
+	</navigation>
+</header><!-- ./ header -->
+
+<p>This is Home {{ Home.name }}</p>
+<button ng-click="Home.openSidenav()">side</button>
