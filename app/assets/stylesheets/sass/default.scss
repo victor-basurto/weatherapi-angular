@@ -1,0 +1,67 @@
+/*-----------------------------------------
+	HELPERS import
+--------------------------------------------*/
+@import "ui/variables";
+@import "ng/ng-animations";
+
+/*-----------------------------------------
+	Main Config
+--------------------------------------------*/
+html { overflow-y: scroll; }
+body { font-family: 'Roboto', Helvetica Neue; }
+a { text-decoration: none; }
+
+// main {
+// 	.intro-div {
+// 		background-color: #bdbdbd;
+// 		text-align: center;
+		
+// 		.intro-span { border-radius: 5px; }
+// 	}
+// 	.todo-lists {
+// 		margin-top: -20px;
+		
+// 		.checkbox {
+// 			.add-padding {
+// 				padding-top: 15px;
+// 			}
+// 			md-checkbox.md-checked span.underlines {
+// 				text-decoration: line-through;
+// 				font-style: italic;
+// 				color: #BDBDBD;
+// 			}
+// 			button.md-warn.md-button {
+// 				margin: -6px 0 0 0;
+// 				float: right;
+// 			}
+// 		}
+// 	}
+
+// }
+/*--------------------------------------------------------------------------
+	MdDialog Developer Content
+-----------------------------------------------------------------------------*/
+// md-dialog {
+// 	.developer {
+// 		&__image-holder {
+// 			overflow: hidden;
+// 			float: right;
+
+// 			&--image {
+// 				height: 120px;
+// 				width: 120px;
+// 			}
+// 		}
+
+// 		&__dialog-content {
+// 			h2 {
+// 				margin: 0;
+// 			}
+// 			span {
+// 				font-size: 14px;
+// 				color: $clearlyGray;
+// 				font-style: italic;
+// 			}
+// 		}
+// 	}
+// }

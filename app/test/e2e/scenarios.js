@@ -4,7 +4,7 @@ describe( 'Weather App', function() {
 	it( 'should redirect to index #/weather', function() {
 		browser.get( 'index.html' );
 		browser.getLocationAbsUrl().then( function (url) {
-			expect( url + 'weather' ).toEqual( '/weather' );
+			expect( url ).toEqual( '/weather' );
 		});
 	});
 });

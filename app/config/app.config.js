@@ -1,5 +1,3 @@
-'use strict';
-
 // Project Constants
 var CONSTS = {
 	_appName: 'Weather App',
@@ -8,7 +6,7 @@ var CONSTS = {
 	_getWeather: 'Get Weather',
 	_typeYourCity: 'Type your City',
 	_weatherAPI: 'Weather API'
-}
+};
 
 /**
 * WeatherApp Module
@@ -31,12 +29,13 @@ RouteConfig.$inject = [ '$mdThemingProvider', '$stateProvider', '$urlRouterProvi
  * @param  { Provider } $urlRouterProvider [routing]
  */
 function RouteConfig( $mdThemingProvider, $stateProvider, $urlRouterProvider ) {
+	'use strict';
 	$mdThemingProvider.theme( 'default' )
 			.primaryPalette( 'indigo' )
 			.accentPalette( 'blue' );
 
 	// default url
-	$urlRouterProvider.otherwise( '/' );
+	$urlRouterProvider.otherwise( '/weather' );
 
 	/**
 	 * TODO: CHANGE ROUTES
@@ -44,8 +43,8 @@ function RouteConfig( $mdThemingProvider, $stateProvider, $urlRouterProvider ) {
 	// routing
 	$stateProvider
 		.state( 'weather', {
-			url: '/',
+			url: '/weather',
 			templateUrl: './views/home/home.tpl.html',
 			controller: 'HomeCtrl as Home'
 		});
-};
+}

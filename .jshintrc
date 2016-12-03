@@ -6,6 +6,8 @@
 	"globals": {
 		"angular": true,
 		"browser": true,
+		"console": true,
+		"document": true,
 		"element": true,
 		"by":true,
 		"io":true,
