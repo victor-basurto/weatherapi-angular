@@ -23,7 +23,7 @@
 			<md-input-container>
 				<label for="city-input">{{ $ctrl.TYPECITY }}</label>
 				<input type="text" id="city-input"
-					ng-model="data" 
+					ng-model="$ctrl.cityValue" 
 					md-autofocus/>
 				<md-button ng-click="$ctrl.getWeather()" class="md-primary">{{ $ctrl.GETWEATHER }}</md-button>
 			</md-input-container>

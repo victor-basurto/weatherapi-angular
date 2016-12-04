@@ -11,4 +11,8 @@ describe( 'HomeCtrl', function() {
 			expect( vm ).toBeDefined();
 		}));
 	});
+
+	/**
+	 * TODO: test data from API
+	 */
 });

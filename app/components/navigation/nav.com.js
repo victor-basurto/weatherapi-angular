@@ -10,7 +10,8 @@
 		bindings: {
 			leftNav: '&',
 			rightNav: '&',
-			getWeather: '&'
+			getWeather: '&',
+			cityValue: '='
 		},
 		templateUrl: '/components/navigation/nav.tpl.html',
 		restrict: 'E',

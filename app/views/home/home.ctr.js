@@ -11,16 +11,27 @@
 	 * [$inject modules to be used]
 	 * @type {Array} - list of modules
 	 */
-	Home.$inject = [ 'DefaultService' ];
+	Home.$inject = [ '$scope', 'DefaultService', 'WeatherApi', 'WeatherValues' ];
 
 	/**
 	 * Main Contructor
 	 */
-	function Home( DefaultService ) {
+	function Home( $scope, DefaultService, WeatherApi, WeatherValues ) {
+
+		/**
+		 * TODO:
+		 * 		Move Init() to its own service
+		 * 		convert degrees to fahrenheit
+		 * 		function to get todays date
+		 */
+
 		var vm = this;
-		vm.openSidenav = openSidenav;
 		vm.closeSidenav = closeSidenav;
+		vm.init = init;
+		vm.openSidenav = openSidenav;
 		vm.getCityWeather = getCityWeather;
+		vm.city = WeatherValues.city;
+		vm.days = WeatherValues.days;
 
 		/**
 		 * [openSidenav open and close leftSideNav]
@@ -34,19 +45,44 @@
 			DefaultService.navMethods.closeNav( 'left' );
 		}
 
+		// watch for changes
+		$scope.$watch('city', function() {
+			WeatherValues.city = vm.city;
+		});
+
 		/**
 		 * [getCityWeather input area, this will get current weather]
 		 * @return {[type]} [description]
-		 * TODO: Connect to API
-		 * 		 Watch for changes
+		 * TODO:
+		 * 		show modal when no text is added
+		 * 		validate for errors
+		 * 		close sidenav when getCityWeather is clicked
 		 */
 		function getCityWeather() {
-			var data = angular.element( document.querySelector( '#city-input') );
-			if ( !data.val() ) {
-				console.log( 'type something' );
-				return;
+			if ( !vm.city ) {
+				console.log( 'enter a value' );
+			} else {
+				WeatherApi.getWeather( vm.days, vm.city )
+					.then( function (response) {
+						vm.weather = response;
+					},function (httpError) {
+						throw httpError.status + ':' + httpError.data;
+					});
 			}
-			console.log(data.val());
 		}
+
+		/**
+		 * Init default City with current weather
+		 */
+		function init() {
+			// get default weather
+			WeatherApi.getWeather( vm.days, vm.city )
+				.then( function (response) {
+					vm.weather = response;
+				},function (httpError) {
+					throw httpError.status + ':' + httpError.data;
+				});
+		}
+		init();
 	}
 })();

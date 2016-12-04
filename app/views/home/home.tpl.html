@@ -3,9 +3,27 @@
 	<navigation 
 		left-nav="Home.openSidenav()" 
 		right-nav="Home.closeSidenav()"
-		get-weather="Home.getCityWeather()">
+		get-weather="Home.getCityWeather()"
+		city-value="Home.city">
 	</navigation>
 </header><!-- ./ header -->
 
+<!-- TODO: 
+		Add main card that holds todays weather
+		Main card should be on its own directive
+		Add images for 
+			{sunny, raining, cloudy, partially cloud, 
+			storm. lightning, etc.}
+		Add 6 card with weather info below main card
+		Add parallaxEffect to all cards including Main
+		Main card should cover entire window
+		remove testings below
+-->
 <p>This is Home {{ Home.name }}</p>
 <button ng-click="Home.openSidenav()">side</button>
+
+
+<!-- testing -->
+<div ng-repeat="weather in Home.weather">
+	<p>{{ weather }}</p>
+</div>
