@@ -15,6 +15,12 @@ exports.config = {
 
 	framework: 'jasmine',
 
+
+	onPrepare: function() {
+		browser.ignoreSynchronization = true;
+		browser.driver.get(browser.baseUrl);
+	},
+
 	jasmineNodeOpts: {
 		defaultTimeoutInterval: 30000
 	}

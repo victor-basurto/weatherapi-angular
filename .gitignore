@@ -37,3 +37,4 @@ oldconfig.txt
 
 # Extra Data #
 ######################
+app/views/home/data.json
