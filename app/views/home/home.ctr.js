@@ -11,12 +11,12 @@
 	 * [$inject modules to be used]
 	 * @type {Array} - list of modules
 	 */
-	Home.$inject = [ '$scope', 'DefaultService', 'WeatherApi', 'WeatherValues' ];
+	Home.$inject = [ '$scope', '$log', 'DefaultService', 'WeatherApi', 'WeatherValues' ];
 
 	/**
 	 * Main Contructor
 	 */
-	function Home( $scope, DefaultService, WeatherApi, WeatherValues ) {
+	function Home( $scope, $log, DefaultService, WeatherApi, WeatherValues ) {
 
 		/**
 		 * TODO:
@@ -52,7 +52,7 @@
 
 		/**
 		 * [getCityWeather input area, this will get current weather]
-		 * @return {[type]} [description]
+		 * @return {Method} [if validation passed, call getWeather()]
 		 * TODO:
 		 * 		show modal when no text is added
 		 * 		validate for errors
@@ -62,27 +62,35 @@
 			if ( !vm.city ) {
 				console.log( 'enter a value' );
 			} else {
-				WeatherApi.getWeather( vm.days, vm.city )
-					.then( function (response) {
-						vm.weather = response;
-					},function (httpError) {
-						throw httpError.status + ':' + httpError.data;
-					});
+				getWeather().then(function() {
+					$log.info( 'Weather from: ' + vm.city );
+				});
+				return getWeather();
 			}
 		}
 
+		// get default weather
+		init();
+
 		/**
-		 * Init default City with current weather
+		 * [init default weather, 5 days, San Diego]
+		 * @return {Promise} [log info once data is succesfully loaded]
 		 */
 		function init() {
-			// get default weather
-			WeatherApi.getWeather( vm.days, vm.city )
+			return getWeather().then( function() {
+				$log.debug( 'Default Weather initialized' );
+			});
+		}
+		/**
+		 * [getWeather get weather according parameters]
+		 * @return {Promise} [if there's weather return object with values]
+		 */
+		function getWeather() {
+			return WeatherApi.getWeather( vm.days, vm.city )
 				.then( function (response) {
 					vm.weather = response;
-				},function (httpError) {
-					throw httpError.status + ':' + httpError.data;
+					return vm.weather;
 				});
 		}
-		init();
 	}
 })();
