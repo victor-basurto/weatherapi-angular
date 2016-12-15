@@ -1,6 +1,9 @@
 (function() {
 	'use strict';
 
+	// jquery enabled
+	var jq = $.noConflict();
+
 	/**
 	 * Module Definition
 	 */
@@ -20,18 +23,17 @@
 
 		/**
 		 * TODO:
-		 * 		Move Init() to its own service
 		 * 		convert degrees to fahrenheit
 		 * 		function to get todays date
 		 */
 
 		var vm = this;
+		vm.city = WeatherValues.city;
 		vm.closeSidenav = closeSidenav;
+		vm.days = WeatherValues.days;
+		vm.getCityWeather = getCityWeather;
 		vm.init = init;
 		vm.openSidenav = openSidenav;
-		vm.getCityWeather = getCityWeather;
-		vm.city = WeatherValues.city;
-		vm.days = WeatherValues.days;
 
 		/**
 		 * [openSidenav open and close leftSideNav]
