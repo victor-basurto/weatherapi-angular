@@ -80,7 +80,7 @@
 		 */
 		function init() {
 			return getWeather().then( function() {
-				$log.debug( 'Default Weather initialized' );
+				$log.log( 'Default Weather initialized' );
 			});
 		}
 		/**
@@ -94,5 +94,9 @@
 					return vm.weather;
 				});
 		}
+
+		// parallaxing
+		jq('img').plaxify();
+		jq.plax.enable();
 	}
 })();

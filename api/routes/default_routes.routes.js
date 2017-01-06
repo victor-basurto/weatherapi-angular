@@ -1,5 +1,5 @@
-var indexrt = require( './index.route' );
+const indexrt = require( './index.route' );
 
-module.exports = function( api ) {
+module.exports = ( api ) => {
 	api.route( '/' ).get( indexrt.getRoute );
 }

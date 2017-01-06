@@ -11,6 +11,43 @@ html { overflow-y: scroll; }
 body { font-family: 'Roboto', Helvetica Neue; }
 a { text-decoration: none; }
 
+/* Weather Card */
+.weather-card {
+
+	// height: 500px;
+	// width: 50%;
+	&__container {
+
+	img {
+		// height: auto;
+		width: 100%;
+	}
+		margin: auto; 
+
+		&--background {
+			z-index: 0;
+		}
+
+		&--front {
+			position: absolute;
+			height: 60%;
+			width: 40% !important;
+			left: 12% !important;
+			top: 11% !important;
+			z-index: 15;
+		}
+
+		&--infront {
+			position: absolute;
+			height: 50% !important;
+			width: 80% !important;
+			top: 15% !important;
+			left: 13% !important;
+			z-index: 20;
+		}
+	}
+
+}
 // main {
 // 	.intro-div {
 // 		background-color: #bdbdbd;

@@ -1,11 +1,11 @@
-var express = require( 'express' ),
+const express = require( 'express' ),
 	morgan = require( 'morgan' ),
 	bodyParser = require( 'body-parser' ),
 	methodOverride = require( 'method-override' ),
 	config = require( './config/server_config' ),
 	mongoose = require( './config/mongoose_config' );
 
-var db = mongoose(),
+const db = mongoose(),
 	api = express();
 	
 api.use( morgan( 'dev' ) );
@@ -18,6 +18,6 @@ api.use( '/', express.static( 'app' ) );
 // remove comment when routes are required
 // require( './routes/default_routes.routes' )( api );
 
-api.listen( config.port, function() {
+api.listen( config.port, () => {
 	console.log( 'app running in http://localhost:' + config.port );
 });

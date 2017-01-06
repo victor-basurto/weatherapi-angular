@@ -19,11 +19,53 @@
 		Main card should cover entire window
 		remove testings below
 -->
+
+<!-- weather card -->
+<md-content class="md-padding" layout-xs="column">
+	<div flex="100" flex-gt-xs="80" flex-offset-gt-xs="10" layout="column">
+		<md-card>
+			<md-card-tittle>
+				<md-card-title-text>
+					<span class="md-headline">{{ Home.weather.city.name }}</span>
+					<span class="md-subhead">today's weather</span>
+				</md-card-title-text><!-- ./ md-card-title-text -->
+			</md-card-tittle><!-- ./ md-card-title -->
+			<md-card-content layout="row" >
+				<div class="weather-card">
+					<div class="weather-card__container">
+					<!-- <img src="/assets/img/blue-sky.png" alt=""> -->
+						<img ng-src="/assets/img/blue-sky.png"
+							class="weather-card__container--background"
+							alt="blue-sky">
+					</div>
+					<div class="weather-card__container">
+						<img ng-src="/assets/img/sunshine.png" 
+							class="weather-card__container--front"
+							data-xrange="40" 
+							data-yrange="10"
+							alt="sun">
+					</div>
+					<div class="weather-card__container">
+						<img ng-src="/assets/img/clouds.png"
+							class="weather-card__container--infront" 
+							data-xrange="40" 
+							data-yrange="10" 
+							data-invert="true">
+					<p>{{ Home.weather.city.name }}</p>
+					</div>
+				</div><!-- ./ weater-card -->
+			</md-card-content><!-- ./ md-card-content -->
+		</md-card><!-- ./ md-card -->
+	</div><!-- ./ flex -->
+</md-content><!-- ./ md-content -->
+<!-- end weather card -->
 <button ng-click="Home.test()">side</button>
-<p id="test-me">This is Home {{ Home.name }}</p>
+
+<!-- this will be the parallax card example -->
 
 
-<!-- testing -->
-<div ng-repeat="weather in Home.weather">
+
+<!-- testing for 5 days -->
+<div ng-repeat="weather in Home.weather.list">
 	<p>{{ weather }}</p>
 </div>

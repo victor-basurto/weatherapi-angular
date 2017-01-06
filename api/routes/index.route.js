@@ -1,3 +1,3 @@
-module.exports.getRoute = function( req, res, next ) {
+module.exports.getRoute = ( req, res, next ) => {
 	res.send( 'api working' );
 }

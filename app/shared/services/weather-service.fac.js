@@ -29,7 +29,7 @@
 		 */
 		return {
 			getWeather: getWeather
-		}
+		};
 
 		/**
 		 * [getWeather get weather from api]

@@ -1,4 +1,4 @@
-var port = process.env.PORT || Number( 8000 ),
+const port = process.env.PORT || Number( 8000 ),
 	mongoURI = 'mongodb://localhost/weatherapp';
 
 module.exports = {
